@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://images.pexels.com/photos/607013/pexels-photo-607013.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+            background-size: cover;
+        }
+        #playButton {
+            font-size: 2em;
+            padding: 20px 40px;
+            background-color: rgba(250, 44, 181, 0.8);
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #videoModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        #videoModal video {
+            width: 100%;
+            border-radius: 10px;
+        }
+        #closeButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #playButton {
+                font-size: 1.5em;
+                padding: 15px 30px;
+            }
+            #videoModal {
+                width: 90%;
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #playButton {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+            #videoModal {
+                width: 95%;
+                max-width: 400px;
+            }
+        }
+        .Zurück-button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .Zurück-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .Zurück-button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .Zurück-button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="playButton">PLAY</button>
+    <div id="videoModal">
+        <button id="closeButton">X</button>
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Dein Browser unterstützt das Video-Tag nicht.
+        </video>
+    </div>
+    <script>
+        const playButton = document.getElementById('playButton');
+        const videoModal = document.getElementById('videoModal');
+        const closeButton = document.getElementById('closeButton');
+
+        playButton.addEventListener('click', () => {
+            videoModal.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', () => {
+            videoModal.style.display = 'none';
+        });
+    </script>
+    <button class="Zurück-button" onclick="location.href='flower.html'">Hier geht es zur startseite zoe :D</button>
+</body>
+</html>
